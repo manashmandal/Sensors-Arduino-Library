@@ -44,7 +44,7 @@ int sensorPin = 53;
 Sensor object(sensorPin);
 object.print(sensorPin); // For printing the value of individual sensor
 ```
-#### 'printValues(int initialDelay, int finalDelay)`
+#### `printValues(int initialDelay, int finalDelay)`
 ```arduino
 int sensors[] = {53, 54, 55, 56};
 Sensor sensorArray(sensors);
