@@ -38,20 +38,39 @@ void loop()
 
 ## Methods
 The methods are limited at this moment
-#### `print(int)`
+#### `void print(int)`
 ```arduino
 int sensorPin = 53;
 Sensor object(sensorPin);
 object.print(sensorPin); // For printing the value of individual sensor
 ```
-#### `printValues(int initialDelay, int finalDelay)`
+#### `void printValues(int initialDelay, int finalDelay)`
 ```arduino
 int sensors[] = {53, 54, 55, 56};
 Sensor sensorArray(sensors);
 sensorArray.printValues(10, 100);
 ```
+#### `void readAll()`
+```arduino
+int sensors[] = {14, 15, 16, 17};
+Sensor sensorObject(sensors);
 
+// Added int type array to contain the reading of the sensors in 'readings'
+void setup()
+{
+  Serial.begin(9600);
+}
 
+void loop()
+{
+  sensorObject.readAll();
+  for (int i = 0; i < sensorObject.size ; i++){
+   Serial.println(sensorObject.readings[i]);
+  }
+  delay(100);
+  Serial.println("---------------");
+}
+```
 ## Limitations
 * Only prints the values, great for robot debugging based on analog sensors
 * `GetValues` will be added later
