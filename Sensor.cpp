@@ -50,6 +50,17 @@ void Sensor::printValues(int initialDelay, int finalDelay)
 	delay(finalDelay);
 }
 
+
+void Sensor::readAll()
+{
+	readings = new int(size);
+	for (int i = 0; i < size; i++){
+		readings[i] = analogRead(sensors[i]);
+	}
+}
+
+
+
 // This will print the value of specific sensor
 void Sensor::print(int index)
 {

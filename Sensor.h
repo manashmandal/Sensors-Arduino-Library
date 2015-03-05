@@ -1,4 +1,4 @@
-#pragma once
+
 #include <Arduino.h>
 
 /*
@@ -25,6 +25,9 @@ public:
 	int size;
 	int* sensors;
 
+	int *readings;
+
+
 	// For 16 Sensors, compatible with UNO too
 	Sensor(int);									//1
 	Sensor(int, int);								//2
@@ -49,6 +52,8 @@ public:
 
 	void printValues(int initialDelay, int finalDelay);
 	void print(int index);
+	void readAll();
+
 
 private:
 	void setSensors();
